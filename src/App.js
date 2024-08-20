@@ -1,10 +1,10 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import { Route, Routes } from "react-router-dom";
-import Invoice from "./pages/Invoice";
 import InvoiceList from "./pages/InvoiceList";
+import Invoice from "./pages/Invoice";
+import ProductList from "./components/ProductList";
+import ProductsTab from "./components/ProductsTab"; // Import the ProductsTab component
 
 const App = () => {
   return (
@@ -15,6 +15,8 @@ const App = () => {
           <Route path="/create" element={<Invoice />} />
           <Route path="/create/:id" element={<Invoice />} />
           <Route path="/edit/:id" element={<Invoice />} />
+          <Route path="/products" element={<ProductList />} />
+          <Route path="/products-tab" element={<ProductsTab />} /> {/* Add this route */}
         </Routes>
       </Container>
     </div>
